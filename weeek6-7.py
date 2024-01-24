@@ -33,7 +33,7 @@ def show_student(stu_id):
     db = client["students"]
     collection = db["stu_info"]
     all_students = list(collection.find())
-    stu = next((s for s in all_students if s["id"] == stu_id),None)
+    stu = next((s for s in all_students if s["_id"] == stu_id),None)
     if(stu):
         return jsonify(stu)
     else:
